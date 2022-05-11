@@ -16,7 +16,7 @@ import ActionCard from "./ActionCard";
 import { Collection } from "@aws-amplify/ui-react";
 export default function HomeCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsPagination = { sort: (s) => s.createdAt(SortDirection.ASCENDING) };
+  const itemsPagination = { sort: (s) => s.price(SortDirection.ASCENDING) };
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Home,
@@ -26,11 +26,8 @@ export default function HomeCollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable="true"
-      isPaginated={true}
       searchPlaceholder="Search..."
-      itemsPerPage={3}
-      templateColumns="1fr 1fr 1fr"
+      templateColumns="1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
       justifyContent="stretch"

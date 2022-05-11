@@ -122,7 +122,7 @@ export default function ActionCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={home?.price}
+          children={`${"$"}${home?.price}`}
           {...getOverrideProps(overrides, "$99 USD")}
         ></Text>
         <Button

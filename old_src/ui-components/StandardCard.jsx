@@ -7,9 +7,9 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Button, Flex, Image, Rating, Text } from "@aws-amplify/ui-react";
-export default function ActionCard(props) {
-  const { home, overrides, ...rest } = props;
+import { Flex, Image, Text } from "@aws-amplify/ui-react";
+export default function StandardCard(props) {
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -20,16 +20,15 @@ export default function ActionCard(props) {
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
       {...rest}
-      {...getOverrideProps(overrides, "ActionCard")}
+      {...getOverrideProps(overrides, "StandardCard")}
     >
       <Image
-        height="408px"
+        height="160px"
         shrink="0"
         alignSelf="stretch"
         objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
-        src={home?.image_url}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -45,13 +44,12 @@ export default function ActionCard(props) {
         <Flex
           gap="8px"
           direction="column"
-          height="108px"
           shrink="0"
           alignSelf="stretch"
           objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Main Text")}
+          {...getOverrideProps(overrides, "Text Group")}
         >
           <Text
             fontFamily="Inter"
@@ -69,14 +67,14 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={home?.address}
-            {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
+            children="$99 USD"
+            {...getOverrideProps(overrides, "$99 USD")}
           ></Text>
           <Text
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(48,64,80,1)"
+            color="rgba(13,26,38,1)"
             lineHeight="24px"
             textAlign="left"
             display="flex"
@@ -89,58 +87,29 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Information about this product"
-            {...getOverrideProps(overrides, "Information about this product")}
+            children="4bds 3 ba 2,530 sqft - Active"
+            {...getOverrideProps(overrides, "4bds 3 ba 2,530 sqft - Active")}
           ></Text>
-          <Rating
+          <Text
+            fontFamily="Inter"
+            fontSize="14px"
+            fontWeight="400"
+            color="rgba(48,64,80,1)"
+            lineHeight="24px"
+            textAlign="left"
             display="flex"
-            gap="8px"
-            direction="row"
-            width="174px"
-            height="40px"
-            alignItems="center"
+            direction="column"
+            justifyContent="flex-start"
             shrink="0"
+            alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
-            size="default"
-            {...getOverrideProps(overrides, "Rating")}
-          ></Rating>
+            whiteSpace="pre-wrap"
+            children="832 34th Ave, Seattle, WA 98122"
+            {...getOverrideProps(overrides, "832 34th Ave, Seattle, WA 98122")}
+          ></Text>
         </Flex>
-        <Text
-          fontFamily="Inter"
-          fontSize="20px"
-          fontWeight="700"
-          color="rgba(13,26,38,1)"
-          lineHeight="25px"
-          textAlign="right"
-          display="flex"
-          direction="column"
-          justifyContent="flex-start"
-          shrink="0"
-          alignSelf="stretch"
-          objectFit="cover"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children={home?.price}
-          {...getOverrideProps(overrides, "$99 USD")}
-        ></Text>
-        <Button
-          display="flex"
-          gap="0"
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          objectFit="cover"
-          position="relative"
-          size="large"
-          isDisabled={false}
-          variation="primary"
-          children="Primary Button"
-          {...getOverrideProps(overrides, "Button")}
-        ></Button>
       </Flex>
     </Flex>
   );
